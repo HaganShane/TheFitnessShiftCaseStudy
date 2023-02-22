@@ -5,11 +5,11 @@ The Fitness Shift is an application designed for anyone who would like to take c
 Download the .zip file, extract the directory, and import it to the IDE of your choice - it is recommended to use Eclipse or IntelliJ.
 
 After it is imported, the only thing you need to change is the information located in the application.properties file, under /src/main/resources. The following information will need to be modified to fit your system information for MySQL Workbench:
-'''
+,,,
 spring.datasource.url = URL
 spring.datasource.username = Username
 spring.datasource.password = Password
-'''
+,,,
 
 ## Database Configuration
 The database schema is as follows:
