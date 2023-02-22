@@ -13,6 +13,7 @@ spring.datasource.password = Password
 
 ## Database Configuration
 The database schema is as follows:
+
 ![Schema](https://github.com/HaganShane/TheFitnessShiftCaseStudy/blob/master/schema.png)
 
 ## How to run and use the application
