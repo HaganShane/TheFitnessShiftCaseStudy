@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>The Fitness Shift - Sign Up</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../styles/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../styles/bootstrap.min.css}">
+    <script type="text/javascript" th:src="@{../scripts/script.js}"></script>
+    <script type="text/javascript" th:src="@{../scripts/bootstrap.bundle.js}"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<style>
+    body {
+        background-color: #3B71CA;
+    }
+</style>
+<body>
+<!-- Start the container to hold the form, using bootstrap -->
+<div class=container>
+    <div class=row>
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+                <div class="card-body p-4 p-sm-5">
+                    <h4 class="card-title text-center mb-5">Sign Up</h4>
+                    <!-- Start form for login -->
+                    <form th:action="@{/signup/save}" th:object="${user}" method="post">
+                        <div class = "row g-2">
+                            <div class = "col-md">
+                                <div class = "form-floating">
+                                    <input type = "text" class = "form-control" id = "firstName" placeholder = "First Name" th:field="*{firstName}">
+                                    <label for = "firstName">First Name</label>
+                                </div>
+                            </div>
+                            <div class = "col-md">
+                                <div class = "form-floating">
+                                    <input type = "text" class = "form-control" id = "lastName" placeholder = "Last Name" th:field="*{lastName}">
+                                    <label for = "lastName">Last Name</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class = "row g-2">
+                            <div class = "col-md">
+                                <div class = "form-floating">
+                                    <input type = "text" class = "form-control" id = "phoneNumber" placeholder = "Phone Number" th:field="*{phoneNumber}">
+                                    <label for = "phoneNumber">Phone Number</label>
+                                </div>
+                            </div>
+                            <div class = "col-md">
+                                <div class = "form-floating">
+                                    <input type = "date" class = "form-control" id = "dob" placeholder = "Date of Birth" th:field="*{dateOfBirth}">
+                                    <label for = "dob">Date of Birth</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class = "row g-2">
+                            <div class = "col-md">
+                                <div class = "form-floating">
+                                    <input type = "text" class = "form-control" id = "height" placeholder = "Height" th:field="*{height}">
+                                    <label for = "height">Height (in.)</label>
+                                </div>
+                            </div>
+                            <div class = "col-md">
+                                <div class = "form-floating">
+                                    <input type = "text" class = "form-control" id = "weight" placeholder = "Weight" th:field="*{weight}">
+                                    <label for = "weight">Weight (lbs.)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email"
+                                   placeholder="example@email.com" th:field="*{email}"> <label for="email">Email
+                            Address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="password"
+                                   placeholder="password" th:field="*{password}"> <label for="password">Password</label>
+                        </div>
+                        <div class="d-grid">
+                            <div id="signupError" th:if="${signupError}" th:text="${signupError}"><br></div>
+                            <div id="signupSuccess" th:if="${signupSuccess}" th:text="${signupSuccess}"><br></div>
+                            <button class="btn btn-primary btn-login fw-bold" type="submit">Register</button>
+                            <br> <a th:href="@{/login}" class="btn btn-outline-secondary">Already
+                            have an account? Sign In</a> <br> <a th:href="@{/}" class = "btn btn-outline-primary"><i class="bi bi-arrow-return-left"></i> Return Home</a>
+                        </div>
+                    </form>
+                    <!-- end form -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end container -->
+
+</body>
+</html>

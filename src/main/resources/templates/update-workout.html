@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Workout</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/bootstrap.min.css}">
+    <script type="text/javascript" th:src="@{/scripts/script.js}"></script>
+    <script type="text/javascript" th:src="@{/scripts/bootstrap.bundle.js}"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<style>
+    body {
+        background-color: #3B71CA;
+    }
+</style>
+<body>
+<!-- Start the container to hold the form, using bootstrap -->
+<div class=container>
+    <div class=row>
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+                <div class="card-body p-4 p-sm-5">
+                    <h4 class="card-title text-center mb-5">Update Workout</h4>
+                    <!-- Start form to update workout -->
+                    <form th:action="@{/addWorkout/{uId}(uId=${uId})}" th:object="${workout}" method="post">
+                        <input type="hidden" th:field="*{wrkId}">
+
+                        <label for="workoutName">Workout Name</label>
+                        <input type="text" th:field="*{workoutName}" id="workoutName" class="form-control mb-4 col-4">
+
+                        <label for="workoutCategory">Workout Category</label>
+                        <input type="text" th:field="*{workoutCategory}" id="workoutCategory" class="form-control mb-4 col-4">
+
+                        <label for="equipment">Equipment Used</label>
+                        <input type="text" th:field="*{equipment}" id="equipment" class="form-control mb-4 col-4">
+
+                        <label for="duration">Duration (min.)</label>
+                        <input type="text" th:field="*{duration}" id="duration" class="form-control mb-4 col-4">
+
+                        <label for="date">Date</label>
+                        <input type="date" th:field="*{date}" id="date" class="form-control mb-4 col-4">
+
+                        <label for="time">Time</label>
+                        <input type="time" th:field="*{time}" id="time" class="form-control mb-4 col-4">
+
+                        <br>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Update Workout</button>
+                            <br>
+                            <a th:href="@{/workout/{uId}(uId=${uId})}" class = "btn btn-outline-secondary"><i class="bi bi-arrow-return-left"></i> Return to Workout Module</a>
+                        </div>
+                    </form>
+                    <!-- End form -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End container -->
+</body>
+</html>

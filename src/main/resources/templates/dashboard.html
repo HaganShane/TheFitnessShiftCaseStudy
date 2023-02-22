@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>The Fitness Shift - Dashboard</title>
+  <link rel="stylesheet" type="text/css" th:href="@{../styles/style.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{../styles/bootstrap.min.css}">
+  <script type="text/javascript" th:src="@{../scripts/script.js}"></script>
+  <script type="text/javascript" th:src="@{../scripts/bootstrap.bundle.js}"></script>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<body>
+<!-- Dashboard navigation bar with branding and links to other html pages within the dashboard -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" th:href="@{/dashboard}">The Fitness Shift</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#main-nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link active" th:href="@{/dashboard/{uId}(uId=${uId})}">Dashboard</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" th:href="@{/workout/{uId}(uId=${uId})}">Workout</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" th:href="@{/water/{uId}(uId=${uId})}">Water</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" th:href="@{/sleep/{uId}(uId=${uId})}">Sleep</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" th:href="@{/food/{uId}(uId=${uId})}">Food</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" th:href="@{/}"><i
+              class="bi bi-box-arrow-left"></i> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- End Dashboard Navigation bar -->
+
+<!-- Custom header with image, overlay and text to display toward the top of the page -->
+<div class="px-4 py-5 text-center dashboard-header">
+  <div class="overlay"></div>
+  <div class="container header-text">
+    <h1>Dashboard</h1>
+    <p>Welcome to your dashboard! You can see an overview of your entries below, or use the links to see a specific module.</p>
+  </div>
+</div>
+<!-- End custom header -->
+
+<!-- Grid system with cards that display the benefits / features of the application -->
+<div
+        class="row row-cols-1 row-cols-md-3 g-4 py-5 mx-auto custom-cards">
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Workout" th:src="@{/images/weights.jpg}" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Total Workouts <b>(COMING SOON!)</b></h3>
+        <p class="card-text">Since your account has opened, you have
+          logged x total workouts! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Workout" th:src="@{/images/weights.jpg}" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Monthly Workouts <b>(COMING SOON!)</b></h3>
+        <p class="card-text">During the month of CHANGE ME, you have
+          logged x total workouts! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Workout" th:src="@{/images/weights.jpg}"
+           class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Weekly Workouts <b>(COMING SOON!)</b></h3>
+        <p class="card-text">During this week, you have logged x total
+          workouts! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End grid with cards -->
+
+<hr class="hr hr-blurry" />
+
+<!-- Grid system with cards that display the benefits / features of the application -->
+<div
+        class="row row-cols-1 row-cols-md-3 g-4 py-5 mx-auto custom-cards">
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Water" th:src="@{/images/waterheader.jpg}" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Total Water <b>(COMING SOON!)</b></h3>
+        <p class="card-text">Since your account has opened, you have
+          logged x total oz's of water! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Water" th:src="@{/images/waterheader.jpg}" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Monthly Water <b>(COMING SOON!)</b></h3>
+        <p class="card-text">During the month of CHANGE ME, you have
+          logged x total oz's of water! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Water" th:src="@{/images/waterheader.jpg}"
+           class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Weekly Water <b>(COMING SOON!)</b></h3>
+        <p class="card-text">During this week, you have logged x total
+          oz's of water! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End grid with cards -->
+
+<hr class="hr hr-blurry" />
+
+<!-- Grid system with cards that display the benefits / features of the application -->
+<div
+        class="row row-cols-1 row-cols-md-3 g-4 py-5 mx-auto custom-cards">
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Sleep" th:src="@{/images/sleep.jpg}" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Total Sleep <b>(COMING SOON!)</b></h3>
+        <p class="card-text">Since your account has opened, you have
+          logged x total hours of sleep! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Sleep" th:src="@{/images/sleep.jpg}" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Monthly Sleep <b>(COMING SOON!)</b></h3>
+        <p class="card-text">During the month of CHANGE ME, you have
+          logged x total hours of sleep! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Sleep" th:src="@{/images/sleep.jpg}"
+           class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Weekly Sleep <b>(COMING SOON!)</b></h3>
+        <p class="card-text">During this week, you have logged x total
+          hours of sleep! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End grid with cards -->
+
+<hr class="hr hr-blurry" />
+
+<!-- Grid system with cards that display the benefits / features of the application -->
+<div
+        class="row row-cols-1 row-cols-md-3 g-4 py-5 mx-auto custom-cards">
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Food" th:src="@{/images/foodheader.jpg}" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Total Food <b>(COMING SOON!)</b></h3>
+        <p class="card-text">Since your account has opened, you have
+          logged x total meals! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Food" th:src="@{/images/foodheader.jpg}" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Monthly Food <b>(COMING SOON!)</b></h3>
+        <p class="card-text">During the month of CHANGE ME, you have
+          logged x total meals! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img alt="Food" th:src="@{/images/foodheader.jpg}"
+           class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">Weekly Food <b>(COMING SOON!)</b></h3>
+        <p class="card-text">During this week, you have logged x total
+          meals! Keep it going!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End grid with cards -->
+</body>
+</html>

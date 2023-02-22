@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>The Fitness Shift - Foods</title>
+  <link rel="stylesheet" type="text/css" th:href="@{../styles/style.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{../styles/bootstrap.min.css}">
+  <script type="text/javascript" th:src="@{../scripts/script.js}"></script>
+  <script type="text/javascript" th:src="@{../scripts/bootstrap.bundle.js}"></script>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+<!-- Dashboard navigation bar with branding and links to other html pages within the dashboard -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" th:href="@{/dashboard/{uId}(uId=${uId})}">The Fitness Shift</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#main-nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" th:href="@{/dashboard/{uId}(uId=${uId})}">Dashboard</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" th:href="@{/workout/{uId}(uId=${uId})}">Workout</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" th:href="@{/water/{uId}(uId=${uId})}">Water</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" th:href="@{/sleep/{uId}(uId=${uId})}">Sleep</a>
+      </li>
+      <li class="nav-item"><a class="nav-link active" th:href="@{/food/{uId}(uId=${uId})}">Food</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" th:href="@{/}"><i
+              class="bi bi-box-arrow-left"></i> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- End Dashboard Navigation bar -->
+
+<!-- Custom header with image, overlay and text to display toward the top of the page -->
+<div class="px-4 py-5 text-center food-header">
+  <div class="overlay"></div>
+  <div class="container header-text">
+    <h1>Food Module</h1>
+    <p>Log your meals using the table below!</p>
+  </div>
+</div>
+<!-- End custom header -->
+
+<div class="container">
+  <br>
+  <a th:href="@{/addFoodForm/{uId}(uId=${uId})}" class="btn btn-primary">+ Add Food</a>
+<!-- Table to display the user food entries -->
+  <table id="foodTable"
+         class="table table-striped table-hover table-bordered border-primary caption-top">
+    <thead class="table-primary">
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Meal Name</th>
+      <th scope="col">Meal Category</th>
+      <th scope="col">Total Calories</th>
+      <th scope="col">Edit & Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+      <th:block th:each="food : ${foodList}">
+        <tr>
+          <td>[[${food.date}]]</td>
+          <td>[[${food.time}]]</td>
+          <td>[[${food.mealName}]]</td>
+          <td>[[${food.mealCategory}]]</td>
+          <td>[[${food.calories}]]</td>
+          <td><a th:href="@{/updateFoodForm/{uId}/{id}(uId=${uId}, id=${food.fId})}" class="btn btn-warning">Edit</a>
+          <a th:href="@{/deleteFood/{uId}/{id}(uId=${uId}, id=${food.fId})}" class="btn btn-danger">Delete</a></td>
+        </tr>
+      </th:block>
+    </tbody>
+  </table>
+<!-- End food table -->
+</div>
+</body>
+</html>

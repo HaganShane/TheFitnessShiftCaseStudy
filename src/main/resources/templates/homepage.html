@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>The Fitness Shift - Homepage</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../styles/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../styles/bootstrap.min.css}">
+    <script type="text/javascript" th:src="@{../scripts/script.js}"></script>
+    <script type="text/javascript" th:src="@{../scripts/bootstrap.bundle.js}"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+<!-- Main navigation bar with branding and links to other html pages -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" th:href="@{/}">The Fitness Shift</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#main-nav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/login}"><i
+                    class="bi bi-box-arrow-in-right"></i> Login</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- End navigation bar -->
+
+
+<!-- Custom header with image, overlay and text to display toward the top of the page -->
+<div class="px-4 py-5 text-center homepage-header">
+    <div class="overlay"></div>
+    <div class="container header-text">
+        <h1>The Fitness Shift</h1>
+        <p>Take control of your lifestyle with The Fitness Shift. Track
+            your health, wellness and workouts... All in one place!</p>
+        <a th:href="@{/signup}" class="btn btn-primary btn-lg">Sign Up
+            Today!</a>
+    </div>
+</div>
+<!-- End custom header -->
+
+<!-- Line to divide the custom header and the cards below -->
+<hr class="hr hr-blurry" />
+
+<!-- Grid system with cards that display the benefits / features of the application -->
+<div
+        class="row row-cols-1 row-cols-md-3 g-4 py-5 mx-auto custom-cards">
+    <div class="col">
+        <div class="card h-100">
+            <img alt="Workout" th:src="@{/images/weights.jpg}" class="card-img-top">
+            <div class="card-body">
+                <h3 class="card-title">Track Workouts</h3>
+                <p class="card-text">Use The Fitness Shift to track workouts
+                    you complete. You will be able to track workout names, categories,
+                    duration, equipment used, and so much more! Sign up today to use
+                    this feature!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img alt="Sleep" th:src="@{/images/sleep.jpg}" class="card-img-top">
+            <div class="card-body">
+                <h3 class="card-title">Sleep Tracking</h3>
+                <p class="card-text">Use The Fitness Shift to track your hours
+                    slept. You will be able to keep a running journal of hours slept
+                    overnight, for middle of the day naps, and so much more! Sign up
+                    today to use this feature!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img alt="FoodAndWater" th:src="@{/images/apples.jpg}"
+                 class="card-img-top">
+            <div class="card-body">
+                <h3 class="card-title">Food & Water Intake</h3>
+                <p class="card-text">Use The Fitness Shift to track your food
+                    and water intake. You will be able to track meal names,
+                    categories, total calories, each cup of water you drink, and so
+                    much more! Sign up today to use this feature!!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End grid with cards -->
+
+<!-- Footer to display some company information and display a stylish footer at the bottom of the page -->
+<footer id="mainFooter" class="d-flex flex-wrap border-top bg-primary">
+    <div class="container text-center">
+        <p>The Fitness Shift - 2023</p>
+    </div>
+</footer>
+<!-- End footer -->
+
+</body>
+</html>
